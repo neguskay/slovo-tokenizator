@@ -1,1 +1,4 @@
 nltk
+Flask
+WTForms
+requests

@@ -1,53 +1,47 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# Hash Tags Profiler
+An application that takes in a text file, reads the contents and returns and matrix of words and their occurrences.
 
-## Welcome
 
-This is GUI app with the following features:
-- Reads/tokenizes words from sentences in text files.
-- Cleans and prunes words.
-- Finds occurrences of words along with lines of sentences in which they occurred.
-- Pytest for Unit Tests (if I have time)
+## Highlights
+- Accept a text file input.
+- Read the sentences within the file.
+- Profile the words within each sentence i.e. indicate where and how many times they occur on the text file.
+- Return a Matrix of words and profile on the web-page in a tabular form.
 
-Project Structure
---------
 
-  ```sh
-  ├── README.md
-  ├── requirements.txt
-  ├── utils
-      ├── classes
-      │   └── __init__.py
-      └── __init__.py
-  
-  ```
+## Implementation Plan 
 
+This is a flask app with the following features:
+- Flask Boiler plate (static files such as html, css and js).
+- Read and profile words and sentences within uploaded text files.
+- Documentation.
 
 
 ### Quick Start
 
-1. Clone the repo
+Clone the repo:
   ```
   $ git clone https://github.com/neguskay/slovo-tokenizator.git
-  $ cd slovo-tokenizator
+  $ cd lokasi-pengguna
   ```
 
-2. Initialize and activate a virtualenv:
+Initialize and activate a virtualenv:
   ```
-  $ virtualenv --no-site-packages env
-  $ source env/bin/activate
+  Can Use Either Conda or VeirtualEnv
   ```
 
-3. Install the dependencies:
+Install the dependencies:
   ```
   $ pip install -r requirements.txt
   ```
 
-5. Run the development server:
+Run the development server:
   ```
-  $ python __init__.py
+  __init__.py in src
   ```
 
-6. Navigate to [http://localhost:5000](http://localhost:5000)
+Navigate to [http://localhost:5000](http://localhost:5000)
 
 
 

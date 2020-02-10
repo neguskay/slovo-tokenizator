@@ -1,4 +1,11 @@
-venv
+# Ignore Virtual Environment
+/venv
+
+# Ignore IDE Files
 .idea
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
 .DS_Store
 punkt

@@ -1,0 +1,69 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Report{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <h1>Organization: </h1>
+</div>
+<p class="lead">This Page Contains All Details of report.</p>
+
+
+
+<div class="card text-center">
+  <div class="card-body">
+
+
+    <!--  Upload Text File Here -->
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <div class="input-group">
+                    <input type="file" class="form-control" accept=".txt" name="hash-tag-file" />
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    {% if hash_tag_matrix is defined %}
+    <!-- Hash Tags Matrix -->
+    <h4 class="card-title" style="text-align: left;">Report File : {{ file_name }}</h4>
+    <h4 class="card-title" style="text-align: left;">Report Scan Date: {{ scan_date }} </h4>
+    <br/>
+    <h3 class="card-text">Hash Tags Matrix</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Word (No of Occurrences)</th>
+<!--          <th scope="col" class="text-center">File name</th>-->
+          <th scope="col" class="text-center">Sentences Containing Word</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for word, word_meta in hash_tag_matrix.items() %}
+        <tr>
+            <td>{{ word }} ({{ word_meta|length }})</td>
+
+            <td>
+            {% for meta in word_meta %}
+            <p>{{ sentences[meta.sent_num] }} :: </p>
+            <p>{{ meta.sent_num }}</p>
+            {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+    {% endif %}
+
+<!--    <a class="btn btn-primary" href=""> PDF Button</a>-->
+<!--    <a class="btn btn-primary" href=""> XML Button</a>-->
+
+  </div>
+</div>
+{% endblock %}
