@@ -1,11 +1,11 @@
 {% extends 'layouts/main.html' %}
-{% block title %}Report{% endblock %}
+{% block title %}Hash Tags{% endblock %}
 {% block content %}
 
 <div class="page-header">
   <h1>Organization: </h1>
 </div>
-<p class="lead">This Page Contains All Details of report.</p>
+<p class="lead">Upload A Text(.txt) File Below To Get Started.</p>
 
 
 
@@ -35,23 +35,22 @@
     <br/>
     <h3 class="card-text">Hash Tags Matrix</h3>
 
-    <table class="table">
+    <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col" class="text-center">Word (No of Occurrences)</th>
-<!--          <th scope="col" class="text-center">File name</th>-->
           <th scope="col" class="text-center">Sentences Containing Word</th>
         </tr>
       </thead>
       <tbody>
         {% for word, word_meta in hash_tag_matrix.items() %}
         <tr>
-            <td>{{ word }} ({{ word_meta|length }})</td>
+            <td><strong> {{ word }} </strong> ({{ word_meta|length }})</td>
 
             <td>
             {% for meta in word_meta %}
-            <p>{{ sentences[meta.sent_num] }} :: </p>
-            <p>{{ meta.sent_num }}</p>
+            <p class="text-left">{{ sentences[meta.sent_num] }}</p>
+            <br/>
             {% endfor %}
             </td>
         </tr>
@@ -60,9 +59,6 @@
       </tbody>
     </table>
     {% endif %}
-
-<!--    <a class="btn btn-primary" href=""> PDF Button</a>-->
-<!--    <a class="btn btn-primary" href=""> XML Button</a>-->
 
   </div>
 </div>

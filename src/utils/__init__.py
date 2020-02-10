@@ -92,8 +92,19 @@ def generate_hash_tag_matrix(list_of_sentences):
             # TO-DO: Add 1 to index to offset
             word_meta = WordMetadata(word, sentence_index, word_index)
 
+            # Retrieve/check is word in matrix
             if word in final_matrix:
-                final_matrix[word].append(word_meta)
+                existing_word_matrix = final_matrix[word]
+                sentence_captured = False
+
+                # Check if sentence number is captured
+                for exist_word in existing_word_matrix:
+                    if exist_word.sent_num == word_meta.sent_num:
+                        sentence_captured = True
+
+                # Only add sentence number if we do not already have it for that word
+                if sentence_captured is not True:
+                    final_matrix[word].append(word_meta)
 
             else:
                 final_matrix[word] = [word_meta]

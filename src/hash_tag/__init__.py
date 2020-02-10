@@ -20,6 +20,9 @@ def get_hash_tags():
             hash_tag_matrix = None
             sentences = None
 
+        if not hash_tag_matrix:
+            return render_template('pages/hash_tag.html')
+
         return render_template(
             'pages/hash_tag.html',
             hash_tag_matrix=hash_tag_matrix,
