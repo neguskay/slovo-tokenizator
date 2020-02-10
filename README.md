@@ -23,7 +23,7 @@ This is a flask app with the following features:
 Clone the repo:
   ```
   $ git clone https://github.com/neguskay/slovo-tokenizator.git
-  $ cd lokasi-pengguna
+  $ cd slovo-tokenizator
   ```
 
 Initialize and activate a virtualenv:
