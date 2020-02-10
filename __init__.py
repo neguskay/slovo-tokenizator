@@ -18,7 +18,7 @@ file_paths = {
     6: "/Users/sofosu-ottopah/PycharmProjects/HashTags/testdocs/doc6.txt",
 }
 
-print("hello")
+print("hello haha")
 
 # Get the GUI
 gui = WordReaderGui()
