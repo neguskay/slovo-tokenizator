@@ -38,8 +38,11 @@ Install the dependencies:
 
 Run the development server:
   ```
-  __init__.py in src
+  src/__init__.py for flask app
+
+  PS: Ignore the __init__.py in root (was used for debugging/dev purposes) 
   ```
+
 
 Navigate to [http://localhost:5000](http://localhost:5000)
 
